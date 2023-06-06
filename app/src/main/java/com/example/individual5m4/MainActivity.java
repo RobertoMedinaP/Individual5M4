@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText nombreedt, apellidoedt, emailedt, passwordedt;
     private Button crearcuentaboton;
+
 
 
     @Override
@@ -51,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
        passwordedt= (EditText) findViewById(R.id.passwordedt);
        crearcuentaboton=(Button) findViewById(R.id.crearcuentaboton);
     }
+
+    /*Nota para mi: los imageview son contenedores, debo arrastrar la imagen a drawable
+    y en xml llamarla con android src @drawable
+     */
 
     //TODO: metodo de validacion de campos vacíos
 
