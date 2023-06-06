@@ -27,8 +27,12 @@ public class MainActivity extends AppCompatActivity {
         crearcuentaboton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // creo un objeto de tipo intent y muy originalmente le pongo intento
+                //saca las cosas de acá y las une con la actividad Resultados
                 Intent intento = new Intent (v.getContext(), Resultados.class);
 
+                //acá obtengo los strings de los distintos edittext y les pongo un nombre
                 intento.putExtra("Nombre", nombreedt.getText().toString());
                 intento.putExtra("Apellido", apellidoedt.getText().toString());
                 intento.putExtra("Email", emailedt.getText().toString());
