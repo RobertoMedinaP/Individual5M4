@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /*Nota para mi: los imageview son contenedores, debo arrastrar la imagen a drawable
-    y en xml llamarla con android src @drawable
+    y en xml llamarla con android src @drawable la imagen se bajo de flaticon.es
      */
 
     //TODO: metodo de validacion de campos vacíos
