@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         String email = emailedt.getText().toString().trim();
         String password = passwordedt.getText().toString().trim();
         //comienza validacion con codigos regex, es valido es verdadero
-        if (nombre.matches("^[a-zA-z]+$") && apellido.matches("^[a-zA-z]+$") && email.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$")) {
+        if (nombre.matches("^[a-zA-z]+$") && apellido.matches("^[a-zA-z]+$") && email.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$") && !password.isEmpty()) {
             esvalido = true;
         //entonces
         } else {
@@ -95,6 +95,11 @@ public class MainActivity extends AppCompatActivity {
             if (!email.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$")) {
                 emailedt.setError("Ingrese un mail válido");
                 esvalido = false;
+            }
+
+            if (password.isEmpty()){
+                passwordedt.setError("Debe ingresar un password");
+                esvalido= false;
             }
         }
         //retorna el valor de esvalido
