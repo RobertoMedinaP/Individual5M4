@@ -60,36 +60,40 @@ public class MainActivity extends AppCompatActivity {
 
     //TODO: metodo de validacion de campos vacíos
 
-    public void validacion() {
+    public boolean validacion() {
 
-        boolean esvalido= true;
+        boolean esvalido = true;
         String nombre = nombreedt.getText().toString().trim();
         String apellido = apellidoedt.getText().toString().trim();
         String email = emailedt.getText().toString().trim();
         String password = passwordedt.getText().toString().trim();
 
-        if (nombre.matches("^[a-zA-z]+$") && apellido.matches("^[a-zA-z]+$") && email.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$"))
-        {
-            esvalido=true;
+        if (nombre.matches("^[a-zA-z]+$") && apellido.matches("^[a-zA-z]+$") && email.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$")) {
+            esvalido = true;
 
         } else {
 
-            if (!nombre.matches("^[a-zA-z+$]")){
+            if (!nombre.matches("^[a-zA-z+$]")) {
                 nombreedt.setError("Ingrese un nombre válido");
+                esvalido = false;
             }
 
-            if (!apellido.matches("^[a-zA-z+$]")){
+            if (!apellido.matches("^[a-zA-z+$]")) {
                 apellidoedt.setError("Ingrese un apellido válido");
+                esvalido = false;
             }
 
-            if(!email.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$")){
+            if (!email.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$")) {
                 emailedt.setError("Ingrese un mail válido");
+                esvalido = false;
             }
-
-            esvalido= false;
         }
 
+        return esvalido;
     }
 
 }
+
+
+
 
